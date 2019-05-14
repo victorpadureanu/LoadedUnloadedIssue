@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="App2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="500" Height="500">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" TextWrapping="Wrap">If you move the slider, the moving button will change its parent depending on the parity of the sliders value.
+            <LineBreak/>
+            The Unloaded Event is called more times than the Loaded Event.
+            <LineBreak/>
+            Below we will display the number of occurences for the Loaded and Unloaded events and the balance between these event.
+            <LineBreak/>
+            If you move the slider slowly you will notice that the balance stays constant. If you move it fast it will decrease.
+            <LineBreak/>
+            I expect the ballance to always be 1.
+        </TextBlock>
+        <TextBlock x:Name="Count" Grid.Row="1">0</TextBlock>
+        <Slider Minimum="0" Maximum="100" ValueChanged="Slider_ValueChanged" Grid.Row="2"/>
+        <Grid x:Name="root" Grid.Row="3" Background="Aqua">
+            <Button x:Name="but">moving buton</Button>
+        </Grid>
+        <Grid x:Name="panel" Grid.Row="4" Background="Green">
+        </Grid>
+    </Grid>
+</Page>
