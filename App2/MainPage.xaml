@@ -13,24 +13,24 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="180" />
+            <RowDefinition Height="200" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0" TextWrapping="Wrap">If you move the slider, the moving button will change its parent depending on the parity of the sliders value.
+        <TextBlock Grid.Row="0" TextWrapping="Wrap">If you press the send 10 events button, the moving button will change its parent 10 times.
             <LineBreak/>
-            The Unloaded Event is called more times than the Loaded Event.
+            The Unloaded Event is called more times than the Loaded Event or the Loading Event.
             <LineBreak/>
-            Below we will display the number of occurences for the Loaded and Unloaded events and the balance between these event.
+            Below we will display the number of occurences for the loading, Loaded and Unloaded events.
             <LineBreak/>
-            If you move the slider slowly you will notice that the balance stays constant. If you move it fast it will decrease.
+            Pressing the send 10 events button you will notive that the number of loading and loaded events starts being smaller than the Unloaded event count.
             <LineBreak/>
-            I expect the ballance to always be 1.
+            I expect the number of Loading and Loaded events to have the value 1 more that the Unlaoded event count.
         </TextBlock>
         <TextBlock x:Name="Count" Grid.Row="1">0</TextBlock>
-        <Slider Minimum="0" Maximum="100" ValueChanged="Slider_ValueChanged" Grid.Row="2"/>
+        <Button Grid.Row="2" Click="Button_Click">Send 10 events</Button>
         <Grid x:Name="root" Grid.Row="3" Background="Aqua">
             <Button x:Name="but">moving buton</Button>
         </Grid>
